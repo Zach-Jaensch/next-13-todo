@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import DataGrid from "./table";
-import { Box } from "@mui/material";
 
 export default async function Page() {
   const prisma = new PrismaClient();
@@ -26,9 +25,5 @@ export default async function Page() {
     },
   ];
 
-  return (
-    <Box sx={{ height: 400, width: "100%" }}>
-      <DataGrid columns={columns} rows={reminders} />
-    </Box>
-  );
+  return <DataGrid columns={columns} rows={reminders} />;
 }
